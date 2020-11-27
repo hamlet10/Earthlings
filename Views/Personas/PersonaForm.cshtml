@@ -1,0 +1,32 @@
+﻿@model PersonasHamlet.Models.Persona
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PersonasForm</title>
+</head>
+<body>
+    <form asp-action="PersonaForm method="post">
+        <p>
+            <label asp-for="Name">Nombre:</label>
+            <input asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="LastName">Apellido:</label>
+            <input asp-for="LastName" />
+        </p>
+        <p>
+            <label asp-for="Age">Edad:</label>
+            <input asp-for="Age" />
+        </p>
+
+        <button type="submit">Registrar Persona</button>
+        <button onclick="location.href='@Url.Action("Index", "Personas")';return false;">Regresar</button>
+    </form>
+</body>
+</html>    

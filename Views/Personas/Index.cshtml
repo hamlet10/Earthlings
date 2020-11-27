@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PersonasHamlet.Dtos.PersonaDto>
+
+@{
+    Layout = "_Layout";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <h2>Personas</h2>
+    <p>Numero de Registros: @Model.Count()</p>
+    <button onclick="location.href='@Url.Action("PersonaForm", "Personas")';return false;">Agregar Registro</button>
+    <button onclick="location.href='@Url.Action("Index", "Home")';return false;">Regresar</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PersonasHamlet.Dtos.PersonaDto p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.LastName</td>
+                    <td>@p.Age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</head>
+<body>
+</body>
+</html>     
