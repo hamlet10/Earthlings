@@ -24,8 +24,8 @@ namespace PersonasHamlet.Controllers
 
         public async Task<IActionResult> Index()
         {
+            
             List<PersonaDto> personasListDto = _mapper.Map<List<PersonaDto>>(await _context.Personas.ToListAsync());
-
             return View(personasListDto);
         }
 
